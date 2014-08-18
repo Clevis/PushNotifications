@@ -21,6 +21,5 @@
         "psr-0": {
 	        "Clevis\\PushNotifications\\": "src/"
         }
-    },
-    "target-dir": "RMS/PushNotificationsBundle"
+    }
 }
