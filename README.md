@@ -4,56 +4,37 @@ A bundle to allow sending of push notifications to mobile devices.  Currently su
 
 ## Installation
 
-To use this bundle in your Symfony2 project add the following to your `composer.json`:
+To use this bundle in your Nette project add the following to your `composer.json`:
 
-    {
-        "require": {
-            // ...
-            "richsage/rms-push-notifications-bundle": "dev-master"
-        }
+```json
+{
+    "require": {
+        // ...
+        "richsage/rms-push-notifications-bundle": "dev-master"
     }
+}
+```
 
-and enable it in your kernel:
+and enable it in your config:
 
-    <?php
-    // app/AppKernel.php
+```yml
+extensions:
+	pushNotifications: Clevis\PushNotifications\DI\PushNotificationsExtension
 
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new RMS\PushNotificationsBundle\RMSPushNotificationsBundle(),
-        );
-    }
+pushNotifications:
+    android:
+        c2dm:
+            username:
+            password:
+            source:
+        gcm:
+            apiKey:
+    apple:
+        sandbox: # boolean
+        pem: # path to certificate
+        passphrase:
+```
 
-
-## Configuration
-
-Configuration options available are as follows. Note that the specific services will
-only be available if you provide configuration respectively for them.
-
-    rms_push_notifications:
-      android:
-          c2dm:
-              username: <string_android_c2dm_username>
-              password: <string_android_c2dm_password>
-              source: <string_android_c2dm_source>
-          gcm:
-              api_key: <string_android_gcm_api_key>
-              use_multi_curl: <boolean_android_gcm_use_multi_curl> # default is true
-      ios:
-          sandbox: <bool_use_apns_sandbox>
-          pem: <path_apns_certificate> # can be absolute or relative path (from app directory)
-          passphrase: <string_apns_certificate_passphrase>
-      mac:
-          sandbox: <bool_use_apns_sandbox>
-          pem: <path_apns_certificate>
-          passphrase: <string_apns_certificate_passphrase>
-      blackberry:
-          evaluation: <bool_bb_evaluation_mode>
-          app_id: <string_bb_app_id>
-          password: <string_bb_password>
-      windowsphone: true
 
 NOTE: If you are using Windows, you may need to set the Android GCM `use_multi_curl` flag to false for GCM messages to be sent correctly.
 
