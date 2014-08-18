@@ -1,16 +1,20 @@
 {
-    "name": "richsage/rms-push-notifications-bundle",
+    "name": "clevis/push-notifications",
     "type": "symfony-bundle",
     "description": "Push notifications/messages for mobile devices",
-    "keywords": ["push", "notification", "bundle", "gcm", "c2dm", "ios", "apns", "blackberry", "mpns", "windowsphone"],
-    "homepage": "https://github.com/richsage/RMSPushNotificationsBundle",
+    "keywords": ["push", "notification", "extension", "nete", "gcm", "c2dm", "ios", "apns", "blackberry", "windowsphone"],
+    "homepage": "https://github.com/clevis/PushNotifications",
     "license": "MIT",
     "authors": [
         {
             "name": "Rich Sage",
             "email": "rich.sage@gmail.com",
             "homepage": "http://www.richsage.co.uk/"
-        }
+        },
+	    {
+		    "name": "Mikulas Dite",
+		    "email": "mikulas@dite.pro"
+	    }
     ],
     "require": {
         "php": ">=5.3.0",
