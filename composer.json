@@ -18,7 +18,9 @@
         "kriswallsmith/buzz": "*"
     },
     "autoload": {
-        "psr-0": { "RMS\\PushNotificationsBundle": "" }
+        "psr-0": {
+	        "Clevis\\PushNotifications\\": "src/"
+        }
     },
     "target-dir": "RMS/PushNotificationsBundle"
 }

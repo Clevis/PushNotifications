@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="rms_push_notifications.class">Clevis\PushNotifications\Service\Notifications</parameter>
+        <parameter key="rms_push_notifications.android.class">Clevis\PushNotifications\Service\OS\AndroidNotification</parameter>
+        <parameter key="rms_push_notifications.ios.class">Clevis\PushNotifications\Service\OS\AppleNotification</parameter>
+        <parameter key="rms_push_notifications.ios.feedback.class">Clevis\PushNotifications\Service\iOSFeedback</parameter>
+        <parameter key="rms_push_notifications.mac.class">Clevis\PushNotifications\Service\OS\AppleNotification</parameter>
+    </parameters>
+
+    <services>
+
+        <!-- main notification service -->
+        <service id="rms_push_notifications" class="%rms_push_notifications.class%">
+        </service>
+
+    </services>
+
+</container>
