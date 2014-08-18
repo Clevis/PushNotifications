@@ -18,7 +18,7 @@ class PushNotificationsExtension extends CompilerExtension
 		]);
 
 		$builder->addDefinition($this->prefix('android.c2dm'))
-			->setClass('Clevis\PushNotifications\Services\OS\AndroidNotification')
+			->setClass('Clevis\PushNotifications\Service\OS\AndroidNotification')
 			->setArguments(array(
 				$config['android.c2dm.username'],
 				$config['android.c2dm.password'],
@@ -26,14 +26,14 @@ class PushNotificationsExtension extends CompilerExtension
 			));
 
 		$builder->addDefinition($this->prefix('android.gcm'))
-			->setClass('Clevis\PushNotifications\Services\OS\AndroidGCMNotification')
+			->setClass('Clevis\PushNotifications\Service\OS\AndroidGCMNotification')
 			->setArguments(array(
 				$config['android.gcm.apiKey'],
 				$config['android.gcm.useMultiCurl'],
 			));
 
 		$builder->addDefinition($this->prefix('apple'))
-			->setClass('Clevis\PushNotifications\Services\OS\AppleNotification')
+			->setClass('Clevis\PushNotifications\Service\OS\AppleNotification')
 			->setArguments(array(
 				$config['android.apple.sandbox'],
 				$config['android.apple.pem'],
@@ -41,7 +41,7 @@ class PushNotificationsExtension extends CompilerExtension
 			));
 
 		$builder->addDefinition($this->prefix('microsoft'))
-			->setClass('Clevis\PushNotifications\Services\OS\MicrosoftNotification');
+			->setClass('Clevis\PushNotifications\Service\OS\MicrosoftNotification');
 
 		$builder->addDefinition($this->prefix('service'))
 			->setClass('Clevis\PushNotifications\Service\Notifications')
