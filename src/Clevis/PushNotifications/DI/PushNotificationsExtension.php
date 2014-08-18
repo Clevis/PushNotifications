@@ -13,7 +13,9 @@ class PushNotificationsExtension extends CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 
-		$config = $this->getConfig($this->defaults);
+		$config = $this->getConfig([
+			'android.gcm.useMultiCurl' => TRUE,
+		]);
 
 		$builder->addDefinition($this->prefix('android.c2dm'))
 			->setClass('Clevis\PushNotifications\Services\OS\AndroidNotification')
