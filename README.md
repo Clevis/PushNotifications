@@ -9,8 +9,7 @@ To use this bundle in your Nette project add the following to your `composer.jso
 ```json
 {
     "require": {
-        // ...
-        "richsage/rms-push-notifications-bundle": "dev-master"
+        "clevis/push-notifications": "~0.1-beta"
     }
 }
 ```
