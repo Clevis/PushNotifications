@@ -22,7 +22,7 @@ class PushNotificationsExtension extends CompilerExtension
 					'source' => NULL,
 				],
 				'gcm' => [
-					'apiKey',
+					'apiKey' => NULL,
 					'useMultiCurl' => TRUE,
 				],
 			],
@@ -32,9 +32,9 @@ class PushNotificationsExtension extends CompilerExtension
 				'passphrase' => NULL,
 			],
 		]);
-		Validators::assert($config['android']['c2dm']['username'], 'string', 'android.c2dm.username');
-		Validators::assert($config['android']['c2dm']['password'], 'string', 'android.c2dm.password');
-		Validators::assert($config['android']['c2dm']['source'], 'string', 'android.c2dm.source');
+		Validators::assert($config['android']['c2dm']['username'], 'null|string', 'android.c2dm.username');
+		Validators::assert($config['android']['c2dm']['password'], 'null|string', 'android.c2dm.password');
+		Validators::assert($config['android']['c2dm']['source'], 'null|string', 'android.c2dm.source');
 		Validators::assert($config['android']['gcm']['apiKey'], 'string', 'android.gcm.apiKey');
 		Validators::assert($config['android']['gcm']['useMultiCurl'], 'boolean', 'android.gcm.useMultiCurl');
 		Validators::assert($config['apple']['sandbox'], 'boolean', 'apple.sandbox');
